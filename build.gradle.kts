@@ -16,7 +16,7 @@ plugins {
 }
 
 group = "dev.isxander"
-version = "2.1.0"
+version = "2.1.1"
 
 repositories {
     mavenCentral()
@@ -39,13 +39,13 @@ dependencies {
     modImplementation(fabricApi.module("fabric-resource-loader-v0", "0.57.3+1.19.1"))
     modImplementation("net.fabricmc:fabric-language-kotlin:1.8.1+kotlin.$kotlinVersion")
 
-    include(implementation("dev.isxander.settxi:settxi-core:2.5.0")!!)
-    include(implementation("dev.isxander.settxi:settxi-kotlinx-serialization:2.5.0")!!)
-    include(modImplementation("dev.isxander.settxi:settxi-gui-cloth-config:2.5.0:fabric-1.19") {
+    include(implementation("dev.isxander.settxi:settxi-core:2.7.1")!!)
+    include(implementation("dev.isxander.settxi:settxi-kotlinx-serialization:2.7.1")!!)
+    include(modImplementation("dev.isxander.settxi:settxi-gui-cloth-config:2.7.1:fabric-1.19.2") {
         exclude(group = "me.shedaniel.cloth")
     })
 
-    modImplementation("me.shedaniel.cloth:cloth-config-fabric:7.+")
+    modImplementation("me.shedaniel.cloth:cloth-config-fabric:8.+")
     modImplementation("com.terraformersmc:modmenu:4.0.+")
 }
 
