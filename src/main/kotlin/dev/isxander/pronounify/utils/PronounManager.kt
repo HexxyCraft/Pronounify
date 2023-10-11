@@ -68,6 +68,7 @@ object PronounManager {
             coroutineScope {
                 chunked.map {
                     async {
+                        // fetch and deserialize this batch of pronouns from the api, or assume unspecified on failure
                         val pronouns = try {
                             val url = URI.create("https://pronoundb.org/api/v1/lookup-bulk?platform=minecraft&ids=${it.joinToString(",")}")
                             val request = HttpRequest.newBuilder(url).timeout(FETCH_PRONOUN_TIMEOUT).build()
