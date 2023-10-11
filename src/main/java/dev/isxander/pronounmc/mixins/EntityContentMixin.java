@@ -44,6 +44,7 @@ public class EntityContentMixin {
                 name = MessageManager.INSTANCE.getTextWithColoredPronoun(name, pronouns, Formatting.DARK_GRAY);
             } else if (!pronounManager.isCurrentlyFetching(uuid)) {
                 pronounManager.cachePronoun(uuid, (pronouns) -> {
+                    // i *think* this is to clear the cached tooltip
                     tooltip = null;
                     return Unit.INSTANCE;
                 });
